@@ -5,8 +5,10 @@
 #ifndef MILESTONE_2_MYTESTCLIENTHANDLER_H
 #define MILESTONE_2_MYTESTCLIENTHANDLER_H
 
+#include "ClientHandler.h"
+#include "Solver.h"
 
-class MyTestClientHandler {
+class MyTestClientHandler : public ClientHandler {
 
 };
 

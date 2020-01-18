@@ -9,7 +9,10 @@
 
 class MySerialServer : public server_side::Server {
 public:
-
+    MySerialServer();
+    void open(int port, ClientHandler *c) override;
+    static void start(int port, ClientHandler *c);
+    void close() override;
 };
 
 
