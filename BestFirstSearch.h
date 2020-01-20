@@ -60,7 +60,9 @@ string BestFirstSearch<T>::search(Searchable<T> *searchable) {
                                 v->setCost(v->getCost() - currentNode->getCost() + v->getPrev()->getCost());
                                 v->setPrev(currentNode);
                                 //update priority.
-                                PriQ = update(PriQ);
+                                auto temp = PriQ.pop();
+                                PriQ.pop();
+                                PriQ.push(temp);
                             }
                         }
                 }
@@ -98,6 +100,20 @@ string solution(vector<State<Cell> *> solve) {
         rowNeighbor = solve[i+1]->getState().getRow();
         columnNode = solve[i]->getState().getColumn();
         columnNeighbor = solve[i+1]->getState().getColumn();
+        //check the direction in which we need to go.
+        if ((columnNode == columnNeighbor) && (rowNeighbor-1) == rowNode) {
+            s+= "Up, ";
+            s+= "(" + to_string(solve[i]->getCost()) + "), ";
+        } else if ((columnNode == columnNeighbor) && (rowNeighbor+1) == rowNode) {
+            s+= "Down, ";
+            s+= "(" + to_string(solve[i]->getCost()) + "), ";
+        } else if ((columnNode == columnNeighbor+1) && rowNeighbor == rowNode) {
+            s+= "Right, ";
+            s+= "(" + to_string(solve[i]->getCost()) + "), ";
+        } else if ((columnNode == columnNeighbor-1) && rowNeighbor == rowNode) {
+            s+= "Left, ";
+            s+= "(" + to_string(solve[i]->getCost()) + "), ";
+        }
     }
 }
 
