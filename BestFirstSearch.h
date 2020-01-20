@@ -12,6 +12,7 @@
 #include "State.h"
 #include "CompareCost.h"
 #include "Cell.h"
+#include "ToStringProblem.h"
 
 /* https://courses.cs.washington.edu/courses/cse326/03su/homework/hw3/bestfirstsearch.html
   reference to the algorithm used. */
@@ -32,7 +33,8 @@ string BestFirstSearch<T>::search(Searchable<T> *searchable) {
     PriQ.push(searchable->getInitialState());
 
     while (!PriQ.empty()) {
-        State<T> * currentNode = PriQ.pop();
+        State<T> * currentNode = PriQ.top();
+        PriQ.pop();
 
         //check if we reached the goal.
         if (searchable->isGoalState(currentNode)) {
@@ -42,8 +44,6 @@ string BestFirstSearch<T>::search(Searchable<T> *searchable) {
                 currentNode = currentNode->getPrev();
                 solve.push_back(currentNode);
             }
-            //solve and return solution.
-            return solution(solve);
         } else {
             neighbors = searchable->getAllPossibleStates(currentNode);
             //for each neighbor if not visited, we visit it.
@@ -60,7 +60,7 @@ string BestFirstSearch<T>::search(Searchable<T> *searchable) {
                                 v->setCost(v->getCost() - currentNode->getCost() + v->getPrev()->getCost());
                                 v->setPrev(currentNode);
                                 //update priority.
-                                auto temp = PriQ.pop();
+                                auto temp = PriQ.top();
                                 PriQ.pop();
                                 PriQ.push(temp);
                             }
@@ -69,6 +69,8 @@ string BestFirstSearch<T>::search(Searchable<T> *searchable) {
             }
         }
     }
+
+    return ToStringProblem::ToString(solve);
 }
 
 template<class T>
@@ -91,30 +93,4 @@ priority_queue<State<T> *, vector<State<T> *>, CompareCost<T>> update(priority_q
     }
     return updated;
 }
-
-string solution(vector<State<Cell> *> solve) {
-    string s;
-    int rowNode, columnNode, rowNeighbor, columnNeighbor;
-    for (int i = 0; i < solve.size(); i++) {
-        rowNode = solve[i]->getState().getRow();
-        rowNeighbor = solve[i+1]->getState().getRow();
-        columnNode = solve[i]->getState().getColumn();
-        columnNeighbor = solve[i+1]->getState().getColumn();
-        //check the direction in which we need to go.
-        if ((columnNode == columnNeighbor) && (rowNeighbor-1) == rowNode) {
-            s+= "Up, ";
-            s+= "(" + to_string(solve[i]->getCost()) + "), ";
-        } else if ((columnNode == columnNeighbor) && (rowNeighbor+1) == rowNode) {
-            s+= "Down, ";
-            s+= "(" + to_string(solve[i]->getCost()) + "), ";
-        } else if ((columnNode == columnNeighbor+1) && rowNeighbor == rowNode) {
-            s+= "Right, ";
-            s+= "(" + to_string(solve[i]->getCost()) + "), ";
-        } else if ((columnNode == columnNeighbor-1) && rowNeighbor == rowNode) {
-            s+= "Left, ";
-            s+= "(" + to_string(solve[i]->getCost()) + "), ";
-        }
-    }
-}
-
 #endif //MILESTONE_2_BESTFIRSTSEARCH_H
