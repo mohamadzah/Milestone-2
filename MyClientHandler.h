@@ -14,12 +14,11 @@
 #include "Cell.h"
 #include "Searcher.h"
 
-template <class Problem, class Solution>
 class MyClientHandler : public ClientHandler {
-    Solver<Problem, Solution> *solver;
-    CacheManager<Problem, Solution> *fileManager;
+    Solver<Searchable<Cell> *, string> *solver;
+    CacheManager<string, string> *fileManager;
 public:
-    MyClientHandler(Solver<Problem, Solution> *solver, CacheManager<Problem, Solution> *fileManager);
+    MyClientHandler(Solver<Searchable<Cell> *, string> *solver, CacheManager<string, string> *fileManager);
     void handleClient(int newSC) override;
     vector<vector<string>> readSolution(int newSC);
     vector<string> removeComma(char buffer[], int s);
