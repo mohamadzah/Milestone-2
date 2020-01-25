@@ -1,9 +1,9 @@
 //
-// Created by zahalka on 19/01/2020.
+// Created by zahalka on 20/01/2020.
 //
 
-#ifndef MILESTONE_2_DFS_H
-#define MILESTONE_2_DFS_H
+#ifndef MILESTONE_2_BFS_H
+#define MILESTONE_2_BFS_H
 
 #include "Searchable.h"
 #include <queue>
@@ -15,24 +15,27 @@
 #include <stack>
 #include "ToStringProblem.h"
 
+//Note to self: this algorithm used FIFO data structure
+
 template <class T>
-class DFS : public Searcher<T> {
+class BFS : public Searcher<T> {
+
 public:
     string search(Searchable<T> * searchable) override;
 };
 
 template<class T>
-string DFS<T>::search(Searchable<T> *searchable) {
+string BFS<T>::search(Searchable<T> *searchable) {
     State<T> * currentNode;
     vector<State<T> *> neighbors, solve;
     State<T> *initial = searchable->getInitialState();
-    stack<State<T> *> stack;
+    queue<State<T> *> queue;
 
-    stack.push(initial);
+    queue.push(initial);
 
-    while (!stack.empty()) {
-        currentNode = stack.top();
-        stack.pop();
+    while (!queue.empty()) {
+        currentNode = queue.front();
+        queue.pop();
 
         //visit the current node
         currentNode->setVisitState(true);
@@ -54,14 +57,13 @@ string DFS<T>::search(Searchable<T> *searchable) {
                 }
                 if (!item->getVisit()) {
                     item->setPrev(currentNode);
-                    stack.push(item);
-                   // item->setCost(currentNode->getCost() + item->getCost());
+                    queue.push(item);
+                    //item->setCost(currentNode->getCost() + item->getCost());
                 }
             }
         }
     }
-
     return ToStringProblem::ToString(solve);
 }
 
-#endif //MILESTONE_2_DFS_H
+#endif //MILESTONE_2_BFS_H
