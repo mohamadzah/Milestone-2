@@ -15,6 +15,7 @@
 #include "Searcher.h"
 
 class MyClientHandler : public ClientHandler {
+    string problem;
     Solver<Searchable<Cell> *, string> *solver;
     CacheManager<string, string> *fileManager;
 public:
@@ -22,6 +23,7 @@ public:
     void handleClient(int newSC) override;
     vector<vector<string>> readSolution(int newSC);
     vector<string> removeComma(char buffer[], int s);
+    ClientHandler *Clone() override;
 };
 
 #endif //MILESTONE_2_MYCLIENTHANDLER_H
