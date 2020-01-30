@@ -1,7 +1,6 @@
 # Milestone-2
 Milestone 2 is a project that we created as a part of two milestones that we have to do for this semester's course Advanced Programming 1
 
-
 ## Description:
 
 In this project, we created a searching algorithm server that is able to hold a conversation with a client (or multiple clients), in which the client will send to the server a sophisticated problem and the server is expected to return to the client a readable solution, the "problem" we dealt with in this program is graphs that are in the shape of matrices.
@@ -26,6 +25,7 @@ Then you will connect to the server using : Telnet 127.0.0.1 5600
 Once you are connected, you can start sending the matrix line by line, once you are done sending the program will begin solving your "problem" and will send back the solution.
 
 **_Note_**: If no connections were made to the server, it will automatically shutdown after 2 minutes (120 seconds).
+**_Note_**: You can find matrices that you can use in the file matrices.txt.
 
 #### Visuals
 
@@ -33,12 +33,11 @@ Here is an example of 3 clients that connected, sent a message and recieved back
 
 ![Clients exmaple](https://github.com/mohamadzah/Milestone-2/blob/master/exampleRun.PNG)
 
-*A comparison between the algorithms can be found in a PDF file found with the code files.
+A comparison between the algorithms can be found in a PDF file found with the code files.
 
 ##### Support
 
 More on server-client relationship: https://en.wikipedia.org/wiki/Client%E2%80%93server_model
-
 
 ###### Authors
 
