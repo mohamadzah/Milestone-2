@@ -31,8 +31,11 @@ namespace server_side {
     protected:
         bool closeServer{};
     public:
+        //open the server on given port
         virtual void open(int port, ClientHandler *c) = 0;
+        //close the sockets.
         virtual void close() = 0;
+        virtual ~Server() = default;
     };
 
 }

@@ -35,6 +35,7 @@ public:
     string hashUnique(const string& problem);
     //destructor
     ~FileCacheManager() override = default;
+    //Clone the cache manager
     CacheManager<string, string>  *Clone() override;
 };
 

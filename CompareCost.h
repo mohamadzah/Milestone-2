@@ -6,11 +6,13 @@
 #define MILESTONE_2_COMPARECOST_H
 
 #include "State.h"
-
+/**
+ * Compare the cost of two states.
+ */
 template <class T>
 class CompareCost {
 public:
-    bool operator()(const State<T> *state, const State<T> *other) {
+    bool operator()(State<T> *state, State<T> *other) {
         return state->getCost() > other->getCost();
     };
 };

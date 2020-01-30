@@ -5,6 +5,14 @@
 #include "MyParallelServer.h"
 
 MyParallelServer::MyParallelServer() {}
+/**
+ * start the handling client process.
+ * @param port
+ * @param c
+ */
+void start2(int port, ClientHandler *c) {
+    c->handleClient(port);
+}
 
 void MyParallelServer::open(int port, ClientHandler *c) {
     int socketSC = socket(AF_INET, SOCK_STREAM, 0);
@@ -13,6 +21,7 @@ void MyParallelServer::open(int port, ClientHandler *c) {
         cerr << "Couldn't create socket!" << endl;
         exit(1);
     }
+    this->serverSocket = socketSC;
 
     sockaddr_in address, clin;
     address.sin_family = AF_INET;
@@ -27,28 +36,68 @@ void MyParallelServer::open(int port, ClientHandler *c) {
     }
     //begin listening to accept multiple clients.
     //we will stay listening until client connects.
+    listen(socketSC, SOMAXCONN);
+    int i = 1;
+    struct timeval tv;
+    struct timeval tvCl;
+
     while (true) {
-        listen(socketSC, 5);
         int cl = sizeof(clin);
-        //time out.
-        /*   struct timeval tv;
-           tv.tv_sec = 120;
-           setsockopt(socketSC,SOL_SOCKET,SO_RCVTIMEO, (const char *) &tv, sizeof(tv));*/
+        this->argument->c = c->Clone();
+        tv.tv_usec = 0;
+        tv.tv_sec = 120;
+        setsockopt(socketSC,SOL_SOCKET,SO_RCVTIMEO, (const char *) &tv, sizeof(tv));
         int newSC = accept(socketSC, (struct sockaddr *) &clin, (socklen_t *) &cl);
+        //time out.
         if (newSC < 0) {
-            cout << "Error" << endl;
+            if (errno == EAGAIN || errno == EWOULDBLOCK) {
+                break;
+            } else {
+                cout << "Error" << endl;
+                break;
+            }
         }
+
+        cout << "Connected to client " << i  << endl;
         //add the function that executes start to a thread, then add thread to vector of threads.
-        thread t1(start, newSC, c);
-        threadVector.push_back(t1);
+        this->argument->newSC = newSC;
+        tvCl.tv_usec = 0;
+        tvCl.tv_sec = 0;
+        setsockopt(newSC,SOL_SOCKET,SO_RCVTIMEO, (const char *) &tvCl, sizeof(tvCl));
+        //threads.
+        this->threadVector.emplace_back(&start2, newSC, c->Clone());
+        //push sockets to close later
+        sockets.push_back(newSC);
+        i++;
     }
-    
+    joinT();
 }
 
-void MyParallelServer::start(int newSC, ClientHandler *c) {
-    c->handleClient(newSC);
+void * MyParallelServer::start(void * argument) {
+   // struct threadArgument * arg =  (struct threadArgument *) argument;
+   // arg->c->handleClient(arg->newSC);
+    return nullptr;
 }
 
 void MyParallelServer::close() {
     //closing sockets
+    ::close(serverSocket);
+    for (auto & i : sockets) {
+        ::close(i);
+    }
+}
+
+MyParallelServer::~MyParallelServer() = default;
+
+/**
+ * if thread can be joined, join
+ */
+void MyParallelServer::joinT() {
+    for (auto & i : threadVector) {
+        if (i.joinable()) {
+            i.join();
+        }
+    }
+    //call the close functions to close sockets.
+    MyParallelServer::close();
 }

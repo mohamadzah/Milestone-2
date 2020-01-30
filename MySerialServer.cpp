@@ -5,13 +5,13 @@
 #include "MySerialServer.h"
 
 MySerialServer::MySerialServer() {
-    closeServer = true;
+    closeServer = false;
 }
 
 void MySerialServer::open(int port, ClientHandler *c) {
     //create a thread and detach the start process.
     thread t1(start, port, c);
-    t1.detach();
+    t1.join();
 }
 
 //create additional function that will create a socket
@@ -22,7 +22,6 @@ void MySerialServer::start(int port, ClientHandler *c) {
         cerr << "Couldn't create socket!" << endl;
         exit(1);
     }
-
     sockaddr_in address, clin;
     address.sin_family = AF_INET;
     //use any to specify ip address
@@ -34,15 +33,23 @@ void MySerialServer::start(int port, ClientHandler *c) {
         cerr << "Couldn't bind the socket" << endl;
         exit(1);
     }
-
     //begin listening to accept multiple clients.
     //we will stay listening until client connects.
     while (true) {
         listen(socketSC, 5);
         int cl = sizeof(clin);
+        //time out.
+        struct timeval tv;
+        tv.tv_sec = 120;
+        setsockopt(socketSC,SOL_SOCKET,SO_RCVTIMEO, (const char *) &tv, sizeof(tv));
         int newSC = accept(socketSC, (struct sockaddr *) &clin, (socklen_t *) &cl);
         if (newSC < 0) {
-            cout << "Error" << endl;
+            if (errno == EAGAIN || errno == EWOULDBLOCK) {
+                break;
+            } else {
+                cout << "Error" << endl;
+                break;
+            }
         }
         //call the handleClient and send the socket to read.
         c->handleClient(newSC);

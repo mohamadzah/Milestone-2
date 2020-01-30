@@ -10,15 +10,19 @@
 #include "iostream"
 
 using namespace std;
-
+/**
+ * Searchable
+ * @tparam T
+ */
 template <typename T>
 class Searchable {
-protected:
+public:
     State<T> * initialState;
     State<T> * goalState;
     vector<State<T> *> possibleStates;
 public:
     virtual State<T> *getInitialState() = 0;
+    virtual bool isInitialState(State<T> *state) = 0;
     virtual bool isGoalState(State<T> *state) = 0;
     virtual vector<State<T>*> getAllPossibleStates(State<T> *state) = 0;
 };

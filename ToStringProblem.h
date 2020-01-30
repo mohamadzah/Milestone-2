@@ -13,27 +13,36 @@ using namespace std;
 
 class ToStringProblem {
 public:
-    string ToString(vector<State<Cell> *> solve) {
+    /**
+     * convert the vector that includes the path, to a path that the client can understand.
+     *
+     * @param solve
+     * @return string that represents the path
+     */
+    static string ToString(vector<State<Cell> *> solve) {
         string s;
         int rowNode, columnNode, rowNeighbor, columnNeighbor;
-        for (int i = 0; i < solve.size(); i++) {
+        for (int i = 1; i < solve.size(); i++) {
+            if (i != 1) {
+                s+= ", ";
+            }
             rowNode = solve[i]->getState().getRow();
-            rowNeighbor = solve[i+1]->getState().getRow();
+            rowNeighbor = solve[i-1]->getState().getRow();
             columnNode = solve[i]->getState().getColumn();
-            columnNeighbor = solve[i+1]->getState().getColumn();
+            columnNeighbor = solve[i-1]->getState().getColumn();
             //check the direction in which we need to go.
             if ((columnNode == columnNeighbor) && (rowNeighbor-1) == rowNode) {
-                s+= "Up, ";
-                s+= "(" + to_string(solve[i]->getCost()) + "), ";
+                s+= "Up ";
+                s+= "(" + to_string((int)solve[i]->getCost()) + ")";
             } else if ((columnNode == columnNeighbor) && (rowNeighbor+1) == rowNode) {
-                s+= "Down, ";
-                s+= "(" + to_string(solve[i]->getCost()) + "), ";
+                s+= "Down ";
+                s+= "(" + to_string((int)solve[i]->getCost()) + ")";
             } else if ((columnNode == columnNeighbor+1) && rowNeighbor == rowNode) {
-                s+= "Right, ";
-                s+= "(" + to_string(solve[i]->getCost()) + "), ";
+                s+= "Right ";
+                s+= "(" + to_string((int)solve[i]->getCost()) + ")";
             } else if ((columnNode == columnNeighbor-1) && rowNeighbor == rowNode) {
-                s+= "Left, ";
-                s+= "(" + to_string(solve[i]->getCost()) + "), ";
+                s+= "Left ";
+                s+= "(" + to_string((int)solve[i]->getCost()) + ")";
             }
         }
         return s;

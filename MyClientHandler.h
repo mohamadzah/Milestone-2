@@ -15,14 +15,20 @@
 #include "Searcher.h"
 
 class MyClientHandler : public ClientHandler {
+    //Fields
     string problem;
     Solver<Searchable<Cell> *, string> *solver;
     CacheManager<string, string> *fileManager;
 public:
+    //Constructor
     MyClientHandler(Solver<Searchable<Cell> *, string> *solver, CacheManager<string, string> *fileManager);
+    //handle client function.
     void handleClient(int newSC) override;
+    //read from client.
     vector<vector<string>> readSolution(int newSC);
+    //remove commas from client input.
     vector<string> removeComma(char buffer[], int s);
+    //clone the client handler.
     ClientHandler *Clone() override;
 };
 

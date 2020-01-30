@@ -6,12 +6,17 @@
 #define MILESTONE_2_MYSERIALSERVER_H
 
 #include "Server.h"
-
+/**
+ * MySerialServer
+ */
 class MySerialServer : public server_side::Server {
 public:
     MySerialServer();
+    //open server on given port
     void open(int port, ClientHandler *c) override;
-    static void start(int port, ClientHandler *c);
+    //start the server
+    static void start(int newSC, ClientHandler *c);
+    //close
     void close() override;
 };
 

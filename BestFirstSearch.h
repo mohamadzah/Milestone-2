@@ -14,15 +14,21 @@
 #include "Cell.h"
 #include "ToStringProblem.h"
 
-/* https://courses.cs.washington.edu/courses/cse326/03su/homework/hw3/bestfirstsearch.html
-  reference to the algorithm used. */
-
 template <class T>
 class BestFirstSearch : public Searcher<T> {
+protected:
+    int numOfNodes;
 public:
     string search(Searchable<T> * searchable) override;
+    int getNumOfNodes() override;
+    Searcher<T> *Clone() override;
 };
-
+/**
+ * Search for the solution using ther BestFS algorithm
+ * @tparam T
+ * @param searchable
+ * @return
+ */
 template<class T>
 string BestFirstSearch<T>::search(Searchable<T> *searchable) {
     vector<State<T> *> neighbors;
@@ -36,6 +42,7 @@ string BestFirstSearch<T>::search(Searchable<T> *searchable) {
         State<T> * currentNode =  PriQ.top();
         currentNode->setVisitState(true);
         PriQ.pop();
+        numOfNodes++;
         //check if we reached the goal.
         if (searchable->isGoalState(currentNode)) {
             State<T> * goal = searchable->goalState;
@@ -56,7 +63,6 @@ string BestFirstSearch<T>::search(Searchable<T> *searchable) {
                     v->setPrev(currentNode);
                     PriQ.push(v);
                 } else {
-                    double cost = Manhattan(searchable->goalState, v);
                     if (v->getPrev() != nullptr) {
                         if ((v->getCost()) > (v->getCost() - v->getPrev()->getCost() + currentNode->getCost())) {
                             if (!Examined(v, PriQ)) {
@@ -78,6 +84,31 @@ string BestFirstSearch<T>::search(Searchable<T> *searchable) {
     return ToStringProblem::ToString(solve);
 }
 
+/**
+ * Number of nodes evaluated.
+ * @tparam T
+ * @return number of nodes.
+ */
+template<class T>
+int BestFirstSearch<T>::getNumOfNodes() {
+    return this->numOfNodes;
+}
+/**
+ * Clone the algorithm
+ * @tparam T
+ * @return new BestFirstSearch
+ */
+template<class T>
+Searcher<T> *BestFirstSearch<T>::Clone() {
+    return new BestFirstSearch();
+}
+/**
+ * check if given node was examined or not.
+ * @tparam T
+ * @param node
+ * @param PriQ
+ * @return true if the node exists in the priority queue , false otherwise.
+ */
 template<class T>
 bool Examined(State<T> *node, priority_queue<State<T> *, vector<State<T> *>, CompareCost<T>> PriQ) {
     while (!PriQ.empty()) {
@@ -88,15 +119,4 @@ bool Examined(State<T> *node, priority_queue<State<T> *, vector<State<T> *>, Com
     }
     return false;
 }
-
-template<class T>
-priority_queue<State<T> *, vector<State<T> *>, CompareCost<T>> update(priority_queue<State<T> *, vector<State<T> *>, CompareCost<T>> PriQ) {
-    priority_queue<State<T> *, vector<State<T> *>, CompareCost<T>> updated;
-    while (!PriQ.empty()) {
-        State<T> * newN = PriQ.pop();
-        updated.push(newN);
-    }
-    return updated;
-}
-
 #endif //MILESTONE_2_BESTFIRSTSEARCH_H
