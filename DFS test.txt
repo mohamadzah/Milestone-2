@@ -1,0 +1,60 @@
+(Node cost is irrelevant in BFS and DFS)
+
+Matrix number1:
+client 1 sent to server
+client 1 received:
+Down (1), Down (2), Down (5), Down (4), Down (4), Down (10), Down (15), Down (13), Right (2), Down (12), Right (5), Right (1), Right (5), Right (9), Right (18), Right (11), Up (7), Right (19), Right (15), Down (5)
+----------------------------
+
+Matrix number2:
+client 2 sent to server
+client 2 received:
+Down (12), Down (12), Down (13), Down (3), Down (20), Down (10), Down (2), Down (15), Down (13), Down (6), Down (6), Right (3), Down (19), Down (2), Down (5), Right (8), Right (14), Right (16), Right (7), Right (9), Right (6), Right (19), Right (12), Right (5), Right (14), Right (6), Right (18), Right (7)
+----------------------------
+
+Matrix number3:
+client 3 sent to server
+client 3 received:
+Down (17), Down (8), Down (4), Down (3), Down (1), Down (19), Down (5), Down (4), Down (10), Down (11), Down (15), Down (18), Down (20), Down (13), Down (11), Down (18), Down (1), Down (13), Down (12), Right (10), Right (19), Right (18), Right (20), Right (6), Right (12), Right (5), Right (6), Right (0), Right (13), Right (20), Right (1), Right (4), Right (15), Right (5), Right (3), Right (1), Right (15), Right (15)
+----------------------------
+
+Matrix number4:
+client 4 sent to server
+client 4 received:
+Down (3), Down (5), Down (6), Down (4), Down (10), Down (10), Down (14), Down (5), Down (11), Down (12), Down (2), Down (18), Down (16), Down (15), Down (7), Down (18), Down (1), Down (10), Down (16), Right (20), Down (14), Down (5), Down (3), Down (17), Right (4), Right (14), Right (17), Down (18), Right (18), Right (9), Right (19), Right (14), Right (15), Right (11), Right (4), Right (10), Right (15), Right (12), Right (3), Right (2), Right (19), Right (19), Right (20), Right (5), Right (17), Right (5), Right (8), Right (3)
+----------------------------
+
+Matrix number5:
+client 5 sent to server
+client 5 received:
+Down (2), Down (5), Down (12), Down (18), Down (3), Down (11), Down (8), Down (2), Right (0), Down (13), Down (2), Down (5), Down (17), Down (5), Down (0), Down (5), Down (7), Down (20), Down (11), Down (15), Down (15), Down (16), Down (15), Down (10), Down (7), Down (0), Down (2), Down (10), Down (6), Down (4), Right (17), Right (16), Right (18), Right (15), Right (17), Right (8), Right (20), Up (12), Right (1), Right (18), Right (10), Down (4), Right (3), Right (16), Right (18), Right (8), Right (8), Right (12), Right (8), Right (15), Right (16), Right (16), Right (14), Up (3), Right (13), Right (17), Down (3), Right (12), Right (19), Right (10), Up (20), Right (12), Right (1), Down (7)
+----------------------------
+
+Matrix number6:
+client 6 sent to server
+client 6 received:
+Down (6), Down (6), Down (13), Down (3), Down (5), Down (8), Down (16), Down (7), Down (6), Down (8), Down (6), Down (4), Down (10), Down (6), Down (17), Down (0), Down (0), Down (8), Down (14), Down (13), Down (14), Down (14), Down (17), Down (13), Down (6), Down (10), Right (14), Down (7), Down (5), Down (11), Down (20), Down (19), Down (16), Down (8), Right (8), Right (7), Right (1), Down (1), Right (18), Right (2), Up (8), Right (18), Right (4), Down (10), Right (20), Right (14), Right (9), Right (12), Right (2), Right (15), Right (10), Right (3), Right (4), Right (9), Right (9), Right (6), Right (7), Right (13), Right (3), Right (20), Right (12), Right (1), Right (13), Right (16), Right (16), Right (14), Right (4), Right (4), Right (4), Right (11)
+----------------------------
+
+Matrix number7:
+client 7 sent to server
+client 7 received:
+Down (0), Right (18), Down (13), Down (5), Down (4), Down (2), Down (16), Down (9), Down (4), Down (7), Down (7), Down (14), Down (3), Down (1), Down (13), Down (17), Down (1), Down (1), Down (17), Right (1), Down (17), Down (14), Down (8), Down (1), Down (18), Down (8), Down (2), Down (9), Down (19), Down (18), Down (2), Down (3), Down (2), Down (20), Down (3), Down (14), Down (5), Down (19), Down (15), Down (2), Down (9), Right (10), Right (9), Right (3), Right (11), Right (15), Right (1), Right (11), Right (7), Right (9), Right (2), Right (20), Right (0), Right (8), Right (3), Right (0), Right (4), Right (1), Up (19), Right (7), Right (15), Down (16), Right (4), Right (5), Right (2), Right (1), Right (17), Right (0), Right (8), Right (10), Right (6), Right (6), Right (8), Right (7), Right (14), Right (12), Right (8), Right (19), Right (17), Right (0)
+----------------------------
+
+Matrix number8:
+client 8 sent to server
+client 8 received:
+Down (18), Down (18), Down (19), Down (11), Down (8), Down (11), Down (7), Down (2), Down (5), Down (1), Down (0), Down (11), Down (6), Down (20), Down (10), Down (11), Down (19), Right (14), Down (14), Down (8), Right (7), Down (8), Right (14), Down (5), Down (9), Down (11), Down (10), Down (18), Down (16), Down (15), Down (8), Down (5), Down (8), Down (16), Down (14), Down (19), Down (18), Down (5), Down (15), Down (0), Down (6), Down (0), Down (15), Down (8), Down (6), Down (6), Down (5), Right (2), Right (0), Right (12), Right (11), Right (0), Right (9), Right (16), Right (2), Right (18), Right (1), Right (7), Right (1), Right (13), Right (17), Right (15), Right (3), Right (11), Right (4), Right (6), Right (1), Right (5), Right (6), Right (15), Right (0), Right (1), Right (18), Up (6), Right (18), Right (2), Right (11), Down (20), Right (6), Right (6), Right (5), Right (14), Right (10), Right (3), Right (13), Right (7), Right (0), Right (13), Right (10), Right (0)
+----------------------------
+
+Matrix number9:
+client 9 sent to server
+client 9 received:
+own (0), Down (16), Down (13), Down (13), Down (10), Down (6), Down (11), Down (1), Down (0), Right (10), Down (19), Down (5), Down (16), Down (15), Down (17), Down (19), Down (15), Down (16), Down (15), Down (9), Down (11), Down (15), Down (7), Down (19), Down (2), Down (2), Down (9), Down (11), Down (16), Down (7), Down (13), Down (15), Down (12), Down (2), Right (12), Down (7), Down (13), Down (17), Down (11), Down (19), Down (10), Down (16), Down (2), Right (4), Down (5), Down (8), Down (4), Down (8), Right (2), Right (2), Down (5), Right (12), Right (0), Down (0), Right (4), Right (11), Right (7), Right (19), Right (7), Right (16), Right (3), Right (14), Right (16), Right (7), Right (19), Right (20), Right (15), Right (13), Right (13), Right (8), Right (5), Right (1), Right (4), Right (18), Right (17), Right (14), Right (18), Right (4), Right (9), Right (11), Right (5), Right (18), Right (13), Right (17), Right (6), Right (6), Right (6), Right (0), Right (14), Right (2), Right (16), Right (17), Right (17), Right (12)
+----------------------------
+
+Matrix number10:
+client 10 sent to server
+client 10 received:
+Down (16), Right (17), Down (11), Down (18), Down (3), Down (5), Down (14), Down (6), Down (13), Down (19), Down (20), Down (7), Down (4), Right (9), Down (2), Down (3), Down (3), Down (2), Down (5), Down (9), Down (16), Down (8), Down (18), Down (0), Down (13), Down (13), Down (17), Down (20), Down (4), Down (9), Down (15), Down (4), Down (4), Down (14), Down (4), Down (9), Down (13), Down (20), Down (7), Down (17), Down (10), Down (7), Down (8), Down (14), Down (4), Down (6), Down (4), Down (17), Down (15), Down (3), Down (15), Right (17), Right (8), Right (0), Right (0), Right (18), Right (16), Right (5), Right (11), Right (15), Right (12), Right (8), Up (11), Right (12), Right (7), Down (2), Right (7), Right (2), Right (13), Right (14), Right (1), Right (13), Right (4), Right (8), Right (8), Right (6), Right (5), Right (7), Right (7), Right (17), Right (15), Right (11), Up (19), Right (7), Right (7), Down (3), Right (0), Right (17), Right (19), Right (13), Right (2), Right (5), Up (12), Right (1), Right (1), Down (19), Right (0), Right (6), Right (10), Right (7), Right (13), Right (6), Right (12), Right (3)
