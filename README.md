@@ -26,13 +26,19 @@ You will have to edit the location and the name of the file where you choose to 
 Open the file auto_client.py file with note pad and you will see the following lines 
 
 DEFAULT_FILE_NAME = 'CHANGE_THIS_TO_MATRIX_NAME'
+
 DEFAULT_TARGET_IP = 'localhost'
+
 DEFAULT_TARGET_PORT = 5600
+
 DEFAULT_MAX_BACKLOG_SIZE = 5
+
 DEFAULT_BUFFER_SIZE = 1024
+
 DEFAULT_SLEEP_TIME = 0.1
 
 You want to change the MATRIX_NAME to the name of the file where the matrix is included, for example: C:\Users\user\Desktop\matrix1.txt
+
 now save and then run the program using the following command: python3 auto_client.py -vv 
 
 Once you are connected, the client will begin sending the matrix line by line, once you are done sending the program will begin solving your "problem" and will send back the solution.
