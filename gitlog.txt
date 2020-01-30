@@ -1,0 +1,276 @@
+commit 49dddd530d67460e618b174f3fc4d1b9bb607762
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 21:03:50 2020 +0200
+
+    Finalizing everything
+
+commit 5c8394d0671815614c23cd326237c21231abcd21
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 21:02:02 2020 +0200
+
+    Unique files for 10 matrices solutions
+
+commit 54778b36bc6217ec849695a9fdb03e005ffc3524
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 18:21:43 2020 +0200
+
+    auto_client for users
+
+commit 3fe238d48fa7f20d403b012d6485cf11ca520256
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 18:21:10 2020 +0200
+
+    Update README.md
+
+commit fb2ab435f147559bf5e40404800becb42e293012
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 18:20:24 2020 +0200
+
+    more readme
+
+commit 1513d1412cd9ca1425a08f0391a8acea9e4b8593
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 17:57:51 2020 +0200
+
+    fix mistake
+
+commit 787d671adea3edba6aa10f190fefbdd624d3c7a7
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 17:04:16 2020 +0200
+
+    All the tests for algorithms
+
+commit 15225a2a5489fb246f3218a74d15e6138c178fb1
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 15:37:31 2020 +0200
+
+    The matrices i used to test
+
+commit dbeaea06cb756a0184ceddbc7fc42746b4938e3a
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 15:30:33 2020 +0200
+
+    update
+
+commit e463bf871f35589f8beb13a6ca95293eab324f41
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 15:18:48 2020 +0200
+
+    Updating the readme
+
+commit e8d5d544a4a973040a8e7f5660a0c2d7982387b3
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Thu Jan 30 15:15:58 2020 +0200
+
+    Client connection example
+
+commit 4aa362453780b28ae897b5510bc46ba4512c7203
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Wed Jan 29 20:46:21 2020 +0200
+
+    Bug fix
+
+commit 0845f6f35c57090aae86c28295cbf737cd4ee0c4
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Wed Jan 29 20:45:44 2020 +0200
+
+    Recreated the caching system to work smarter
+
+commit 88d4c6ca5018b763b5198a9e4c67618f2daa39e4
+Merge: 494cad7 3a080e8
+Author: zahalka <zahalka@zahalka-VirtualBox>
+Date:   Sat Jan 25 13:41:03 2020 +0200
+
+    CL-2019.3.3 <zahalka@zahalka-VirtualBox Merge branch 'master'
+
+commit 3a080e8c2619d2d19b846d9c38080fc667cd2a84
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Sat Jan 25 11:47:23 2020 +0200
+
+    Bug fixes and utilization.
+
+commit 494cad7ea85d0d283ff7e61528650a94743817cb
+Author: zahalka <zahalka@zahalka-VirtualBox>
+Date:   Wed Jan 22 14:46:53 2020 +0200
+
+    CL-2019.3.2 <zahalka@zahalka-VirtualBox Update editor.xml
+
+commit e57b6e84e5181258ebb06bd10e2956437c40c918
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Tue Jan 21 16:21:25 2020 +0200
+
+    More clienthandler
+
+commit 2a6035aba6612ae49f3c494422e04f4e050c9442
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Tue Jan 21 13:44:30 2020 +0200
+
+    Work on MyClientHandler
+
+commit f9570328976769a93c3c5175047e0d0863f3e8d4
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 20 21:38:51 2020 +0200
+
+    Update on parallel server
+
+commit 0c09260d4bab20d75382a2546727363904116b1c
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 20 20:54:02 2020 +0200
+
+    Tweak
+
+commit 88c771ec4444ed3178d99224e0810aaf4decb1d7
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 20 20:53:27 2020 +0200
+
+    DFS algorithm and tostring class
+    
+    To string class to get the solution as text.
+
+commit ee8b8d8b22b5f9ae7072a8a030f383ecd246b34a
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 20 12:07:34 2020 +0200
+
+    more bestFS work
+
+commit b55a2b323fb6ea2c285044c9e4fffa1839473f81
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Sun Jan 19 14:00:14 2020 +0200
+
+    BestFS more work
+
+commit 56a43521ef51d7999addb7a18872b16c5bb00db4
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Sun Jan 19 13:59:37 2020 +0200
+
+    OA call the solve function
+
+commit 547bb8789cc16d4fb4975c6756becf3a9c01149b
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Sun Jan 19 07:44:25 2020 +0200
+
+    Beginning with searching algorithms
+
+commit 1c8946852dbda2efc2a18bf8958e0a479a38a2cf
+Merge: dab0593 a74731f
+Author: zahalka <zahalka@zahalka-VirtualBox>
+Date:   Sat Jan 18 19:44:04 2020 +0200
+
+    CL-2019.3.2 <zahalka@zahalka-VirtualBox Merge branch 'master'
+
+commit a74731fa7b71ad679c8fd17088132a74c826c2b8
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Sat Jan 18 15:43:38 2020 +0200
+
+    Push alogirthm code update
+
+commit dab0593dc1a73acd0ae843fd18e9abed3264a057
+Author: zahalka <zahalka@zahalka-VirtualBox>
+Date:   Wed Jan 15 04:13:18 2020 +0200
+
+    CL-2019.3.2 <zahalka@zahalka-VirtualBox Create Default.xml
+
+commit 5141fcff84d7bb0f04fd04b3c420d06608fc07c2
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Wed Jan 15 00:02:16 2020 +0200
+
+    1st update on code
+
+commit ab202b872d200c5b6a379f3b072080811da42b0b
+Author: zahalka <zahalka@zahalka-VirtualBox>
+Date:   Mon Jan 13 18:23:39 2020 +0200
+
+    CL-2019.3.2 <zahalka@zahalka-VirtualBox Create cpp.toolchains.xml, code.style.schemes.xml, colors.scheme.xml, editor.xml, laf.xml, github.xml, Default.xml, debugger.xml
+
+commit 029c33c00e45b68bd4bcb9b06aed121cacb6ec3d
+Merge: 715b7bd 7fc340e
+Author: zahalka <zahalka@zahalka-VirtualBox>
+Date:   Mon Jan 13 07:18:48 2020 +0200
+
+    CL-2019.3.2 <zahalka@zahalka-VirtualBox Merge branch 'master'
+
+commit 7fc340e09cf9b1e03a3b29afe67f0f1b7d05804f
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 07:17:42 2020 +0200
+
+    Add files via upload
+    
+    Initialization of the files and getting grasp of what i need to do.
+
+commit 715b7bdecc1263c05b7b4b2cb8514a4cda5bf358
+Author: zahalka <zahalka@zahalka-VirtualBox>
+Date:   Mon Jan 13 06:25:41 2020 +0200
+
+    CL-2019.3.2 <zahalka@zahalka-VirtualBox Delete updates.xml
+
+commit 32dca4fee8c0d1b493fbb81d2fd2e28e97d7ef76
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 03:47:05 2020 +0200
+
+    Delete laf.xml
+
+commit d6f00289d5060cd260b6a81de7f24721b606b02c
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 03:46:54 2020 +0200
+
+    Delete colors.scheme.xml
+
+commit 5212729aa74b02d2d143de67e274ceae11f509d6
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 03:46:47 2020 +0200
+
+    Delete debugger.xml
+
+commit 2c03df9b52fa4e9d806eecca3b9870a53c538817
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 03:46:35 2020 +0200
+
+    Delete Default.xml
+
+commit 80aa4013cd7e450a983f6681632fe5aac1e2e110
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 03:46:25 2020 +0200
+
+    Delete github.xml
+
+commit 015f060448941e1dfd4d68d61967c15e667292ee
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 03:46:17 2020 +0200
+
+    Delete project.default.xml
+
+commit 2479b1c3da7385081920582b15336049949fc4e4
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 03:46:09 2020 +0200
+
+    Delete updates.xml
+
+commit 4ee2f46fcc592be89069a4bdde6008210599d93a
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 03:45:53 2020 +0200
+
+    Delete cpp.toolchains.xml
+
+commit 2b04578402cc388f2b6e0753db398db10fdb6857
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Mon Jan 13 03:41:58 2020 +0200
+
+    Create README.md
+
+commit af13e6af26b875711b8841c9da6bed4060885060
+Author: zahalka <zahalka@zahalka-VirtualBox>
+Date:   Mon Jan 13 03:41:15 2020 +0200
+
+    CL-2019.3.2 <zahalka@zahalka-VirtualBox Create cpp.toolchains.xml, project.default.xml, colors.scheme.xml, laf.xml, github.xml, Default.xml, debugger.xml, updates.xml
+
+commit fe75c3c0d5cda4fed1ab0f1b5893875c9c442a58
+Author: zahalka <zahalka@zahalka-VirtualBox>
+Date:   Mon Jan 13 03:41:15 2020 +0200
+
+    CL-2019.3.2 <zahalka@zahalka-VirtualBox Overwrite remote https://github.com/mohamadzah/Milestone-2 to local
+
+commit f374c6542dca3299ed6aec47d13692daf4013a63
+Author: mohamadzah <59395490+mohamadzah@users.noreply.github.com>
+Date:   Tue Jan 7 01:57:05 2020 +0200
+
+    Initial commit
